@@ -34,7 +34,7 @@
             <td style="text-align: center"><a href="ticket.view.php" id="<?=$id?>" class="btn btn-warning mt-1">Ticket</a></td>
             <?php endif;?>
         </tr>
-    <? endforeach;?>
+    <?php endforeach;?>
 </table>
 </body>
 </html>
