@@ -64,7 +64,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="to">I kur skrendate?</label>
-                    <select name="from" class="form-select">
+                    <select name="to" class="form-select">
                         <option selected disabled>---Pasirinkite Sali---</option>
                         <?php foreach($location as $key => $locations):?>
                             <option value="<?=$locations;?>"><?=$locations;?></option>

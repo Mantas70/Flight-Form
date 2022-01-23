@@ -1,12 +1,11 @@
 <?php
 
 $validationErrors = [];
-function saveMessage($data){
-    $file = '../data/messages.txt';
-    $content = file_get_contents($file);
-    $formData = implode(',',$data);
-    $content .=$formData."/n";
-    file_put_contents($file,$content);
+function saveMessage($item) {
+    $document = "../data/ticket.json";
+    $content = json_decode(file_get_contents($document), true);
+    $content[rand(1000,9999)] = $item;
+    file_put_contents($document, json_encode($content));
 }
 
 function validate($data) {
@@ -24,7 +23,6 @@ function validate($data) {
     }
 }
 function getData(){
-    $tickets = file_get_contents('../data/messages.txt');
-    $tickets = explode('/n', $tickets);
-    return $tickets;
+    $data = json_decode(file_get_contents('../data/ticket.json'), true);
+    return $data;
 }

@@ -22,19 +22,19 @@
         <th>Pastabos</th>
         <th>Bilietas</th>
     </tr>
-    <?php foreach (getData() as $id=>$tickets):?>
-        <tr>
-            <?php $tickets = explode(',',$tickets);?>
-            <?php foreach ($tickets as $item):?>
-            <?php if(!empty($item)):?>
-            <td style="text-align: center"><?=$item?></td>
-            <?php endif;?>
-            <?php endforeach;?>
-            <?php if(!empty($item)):?>
-            <td style="text-align: center"><a href="ticket.view.php" id="<?=$id?>" class="btn btn-warning mt-1">Ticket</a></td>
-            <?php endif;?>
-        </tr>
-    <? endforeach;?>
+    <?php foreach(getData() as $key=>$data): ?>
+    <tr>
+        <td><?=$data["name"]?></td>
+        <td><?= $data["lname"]?></td>
+        <td><?= $data["flightIDs"]?></td>
+        <td><?= $data["from"]?></td>
+        <td><?= $data["to"]?></td>
+        <td><?= $data["price"]?></td>
+        <td><?= $data["weight"]?></td>
+        <td><?=$data["message"]?></td>
+        <td><a href="ticket.view.php?id=<?=$key;?>" class="w-auto btn btn-success">Bilietas</a></td>
+    </tr>
+    <?php endforeach;?>
 </table>
 </body>
 </html>
